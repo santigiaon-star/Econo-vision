@@ -1,0 +1,107 @@
+
+
+@use "variables" as*;
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+  
+  header {
+    background: $color-primary;
+    padding: 15px 10px;
+    margin-bottom: 15px;
+    border-radius: 0;
+    box-shadow: none;
+    
+    h1 {
+      font-size: 1.4rem;
+    }
+    
+    p {
+      font-size: 0.8rem;
+    }
+    
+    nav ul {
+      flex-direction: column;
+      gap: 5px;
+      
+      a {
+        display: block;
+        padding: 8px;
+        background: rgba(0,0,0,0.1);
+        border-radius: 4px;
+      }
+    }
+  }
+  
+  .contenedor,
+  .mercado,
+  .argentina,
+  .mundial {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "titulo1"
+      "imagenbcra"
+      "texto1"
+      "titulo2"
+      "imagenmex"
+      "texto2"
+      "titulo3"
+      "imagenue"
+      "texto3";
+    padding: 10px;
+    
+    // Desactivar animaciones complejas en móvil
+    animation: none;
+    
+    > * {
+      animation: none !important;
+    }
+  }
+  
+  .destacadas {
+    display: none;
+  }
+  
+  .imagenbcra,
+  .imagenmex,
+  .imagenue,
+  .dolartecho,
+  .mercadofinancieroyc,
+  .inteligencia,
+  .pibeu {
+    width: 100%;
+    height: auto;
+    max-height: $image-height;
+    
+    // Desactivar animaciones hover en móvil
+    &:hover {
+      animation: none !important;
+      filter: none !important;
+    }
+  }
+  
+  .mercado > div,
+  .argentina > div,
+  .mundial > div {
+    padding: 15px;
+    margin-bottom: 15px;
+    
+    // Desactivar animaciones hover en móvil
+    &:hover {
+      animation: none !important;
+    }
+  }
+  
+  footer {
+    margin-top: 20px;
+    padding: 15px;
+    
+    // Desactivar animaciones hover en móvil
+    &:hover {
+      animation: none !important;
+    }
+  }
+}

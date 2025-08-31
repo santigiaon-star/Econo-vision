@@ -1,0 +1,104 @@
+@use "variables" as*;
+
+//  HEADER 
+header {
+  background: linear-gradient(135deg, $color-primary, $color-secondary);
+  color: $color-white;
+  padding: $header-padding;
+  text-align: center;
+  margin-bottom: 40px;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  animation: fadeIn 0.8s ease-out;
+  
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    
+    .tituloprincipal {
+      color: $color-white;
+      text-align: center;
+      margin: 0.5rem 0;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      
+      &:hover {
+        animation: subtleGlow 2s infinite;
+      }
+    }
+  }
+  
+  nav {
+    padding: 0.5rem 0;
+    
+    ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      gap: 2rem;
+      
+      li {
+        position: relative;
+        padding: 0.5rem 0;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2px;
+          background: lighten($color-primary, 20%);
+          bottom: 0;
+          left: 0;
+          transition: width 0.3s ease;
+        }
+        
+        &:hover::after {
+          width: 100%;
+        }
+        
+        a {
+          color: $color-white;
+          text-decoration: none;
+          font-size: 1rem;
+          font-weight: 500;
+          padding: 0.5rem 1rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: $radius-sm;
+          }
+        }
+      }
+    }
+  }
+}
+
+//FOOTER
+footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 20px;
+  background-color: $color-primary;
+  color: $color-white;
+  border-radius: $radius-lg;
+  font-size: 0.9em;
+  animation: fadeIn 1s ease-out;
+  
+  .parrafo, .parrafo1 {
+    color: $color-white;
+  }
+  
+  &:hover {
+    animation: subtleGlow 2s infinite;
+  }
+}

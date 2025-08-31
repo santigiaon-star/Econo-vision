@@ -1,0 +1,68 @@
+@use "variables" as*;
+
+
+// MERCADO 
+.mercado {
+  display: grid;
+  grid-template-areas: "dolar merval commodities";
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-out;
+  .mercado1{
+    display: none;
+  }
+  
+  > div {
+    background-color: $color-light;
+    padding: 60px;
+    border-radius: $radius-md;
+    box-shadow: $shadow-sm;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.8s ease-out;
+  
+   
+    &:hover {
+      background: darken($color-light, 3%);
+      animation: smoothHover 0.5s ease;
+    }
+  }
+  
+  .dolar {
+    grid-area: dolar;
+  }
+  
+  .mercado2 {
+    grid-area: mercado2;
+  }
+  
+  .commodities {
+    grid-area: commodities;
+  }
+  
+  .variacionsube {
+    background-color: $color-up;
+    padding: 2px 5px;
+    border-radius: $radius-sm;
+    color: $color-white;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      animation: pulse 0.5s ease;
+    }
+  }
+  
+  .variacionbaja {
+    @include variacion ;
+    color: $color-white;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      animation: pulse 0.5s ease;
+    }
+  }
+  
+  
+}

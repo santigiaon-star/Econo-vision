@@ -1,0 +1,53 @@
+// VARIABLES
+$color-primary: #2c3e50;
+$color-secondary: #3498db;
+$color-accent: #e74c3c;
+$color-light: #f5f7fa;
+$color-bg: #f8f9fa;
+$color-grey: #eee;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-text: #333333;
+$color-subtext: #555555;
+$color-link: rgba(0, 0, 255, 0.5);
+$color-up: green;
+$color-down: red;
+
+$header-padding: 40px 20px;
+$header-title-size: 2.5em;
+$header-subtitle-size: 1.1em;
+$title-size: 1.3rem;
+$subtitle-size: 1rem;
+$text-size: 0.95rem;
+$image-height: 180px;
+$image-width: 100%;
+
+$shadow-sm: 0 2px 5px rgba(0,0,0,0.1);
+$shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+$shadow-lg: 0 4px 8px rgba(0,0,0,0.2);
+$radius-sm: 4px;
+$radius-md: 6px;
+$radius-lg: 8px;
+
+// ANIMACIONES
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes subtleGlow {
+  0%, 100% { box-shadow: 0 0 5px rgba(52, 152, 219, 0.3); }
+  50% { box-shadow: 0 0 15px rgba(52, 152, 219, 0.6); }
+}
+
+@keyframes smoothHover {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+ 
+@mixin variacion {
+   background-color: $color-down;
+    padding: 2px 5px;
+    border-radius: $radius-sm
+}

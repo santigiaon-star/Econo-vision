@@ -1,0 +1,150 @@
+@use "variables" as*;
+
+
+.contenedor {
+  display: grid;
+  grid-template-areas: 
+    "titulo1 titulo2 titulo3 destacada"
+    "imagenbcra imagenmex imagenue destacada"
+    "texto1 texto2 texto3 destacada";
+  grid-template-columns: repeat(3, 1fr) 300px;
+  gap: 20px;
+  align-items: start;
+  grid-auto-rows: min-content;
+  grid-template-rows: auto auto auto;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  animation: fadeIn 1s ease-out;
+  
+  .titulo1, .titulo2, .titulo3 {
+    font-size: $title-size;
+    margin: 0;
+    padding: 10px 15px;
+    line-height: 1.3;
+    background: $color-light;
+    border-radius: $radius-md;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: darken($color-light, 5%);
+      animation: smoothHover 0.5s ease;
+    }
+  }
+  
+  .titulo1 { 
+    grid-area: titulo1; 
+    animation: fadeIn 0.6s ease-out 0.2s both;
+  }
+  
+  .titulo2 { 
+    grid-area: titulo2; 
+    animation: fadeIn 0.6s ease-out 0.4s both;
+  }
+  
+  .titulo3 { 
+    grid-area: titulo3; 
+    animation: fadeIn 0.6s ease-out 0.6s both;
+  }
+  
+  .imagenbcra, .imagenmex, .imagenue {
+    width: $image-width;
+    height: $image-height;
+    object-fit: cover;
+    border-radius: $radius-md;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      filter: brightness(1.05);
+      animation: subtleGlow 2s infinite;
+    }
+  }
+  
+  .imagenbcra { 
+    grid-area: imagenbcra;
+    box-shadow: $shadow-lg;
+    animation: fadeIn 0.7s ease-out 0.3s both;
+  }
+  
+  .imagenmex { 
+    grid-area: imagenmex;
+    animation: fadeIn 0.7s ease-out 0.5s both;
+  }
+  
+  .imagenue { 
+    grid-area: imagenue;
+    animation: fadeIn 0.7s ease-out 0.7s both;
+  }
+  
+  .texto1, .texto2, .texto3 {
+    font-size: $text-size;
+    line-height: 1.5;
+    margin: 0;
+    padding: 10px 15px;
+    background: $color-white;
+    border-radius: $radius-md;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: darken($color-white, 3%);
+      animation: smoothHover 0.5s ease;
+    }
+  }
+  
+  .texto1 { 
+    grid-area: texto1;
+    animation: fadeIn 0.8s ease-out 0.4s both;
+  }
+  
+  .texto2 { 
+    grid-area: texto2;
+    animation: fadeIn 0.8s ease-out 0.6s both;
+  }
+  
+  .texto3 { 
+    grid-area: texto3;
+    animation: fadeIn 0.8s ease-out 0.8s both;
+  }
+  
+  .destacadas {
+    grid-column: 4;
+    grid-row: 1 / span 3;
+    background: $color-bg;
+    padding: 25px;
+    border-left: 4px solid $color-accent;
+    border-radius: 0 $radius-md $radius-md 0;
+    animation: fadeIn 1s ease-out 0.9s both;
+    
+    h2 {
+      font-size: $title-size;
+      color: $color-primary;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $color-grey;
+    }
+    
+    h3 {
+      font-size: 1.1rem;
+      color: $color-accent;
+      margin: 15px 0 8px 0;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: darken($color-accent, 10%);
+        padding-left: 10px;
+      }
+    }
+    
+    p {
+      font-size: $text-size;
+      line-height: 1.5;
+      color: $color-subtext;
+    }
+    
+    &:hover {
+      animation: subtleGlow 2s infinite;
+    }
+  }
+}
+

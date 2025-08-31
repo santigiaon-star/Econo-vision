@@ -1,0 +1,63 @@
+@use "variables" as*;
+
+
+.argentina {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  animation: fadeIn 1s ease-out;
+  
+  .economiaargentina{
+    display: none;
+  }
+  
+  .ultimahora, .infla, .consumo {
+    background: $color-grey;
+    color: $color-black;
+    padding: 15px;
+    margin: 0;
+    font-size: $title-size;
+    text-align: left;
+    border-radius: $radius-md;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.8s ease-out;
+    
+    &:hover {
+      background: darken($color-grey, 5%);
+      animation: smoothHover 0.5s ease;
+    }
+  }
+  
+  .dolartecho {
+    width: $image-width;
+    height: $image-height;
+    object-fit: cover;
+    border-radius: $radius-md;
+    box-shadow: $shadow-sm;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.9s ease-out;
+    
+    &:hover {
+      filter: brightness(1.05);
+      animation: subtleGlow 2s infinite;
+    }
+  }
+  
+  .titulomenor1, .titulomenor2 {
+    font-size: $subtitle-size;
+    margin: 15px 0 8px 0;
+    padding: 10px 15px;
+    line-height: 1.3;
+    background: $color-light;
+    border-radius: $radius-sm;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: darken($color-light, 5%);
+      padding-left: 20px;
+    }
+  }
+}
